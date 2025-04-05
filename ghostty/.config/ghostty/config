@@ -1,0 +1,28 @@
+# Fonts
+font-family = "FantasqueSansM Nerd Font Mono Bold"
+font-style-bold = "SemiBold"
+font-size = 12.5
+
+# Turn off confirmation window when closing
+confirm-close-surface = false
+
+adjust-cell-height = 18%
+
+# Top tab 
+gtk-titlebar = false
+
+resize-overlay = never
+
+# Gtk makes startup times slow, slow turn it off
+gtk-adwaita = false
+
+gtk-single-instance = true
+
+# Remove Bottom Padding
+window-padding-y = 1
+
+# Shader
+# custom-shader = shaders/gradient-background.glsl
+
+# Theme
+theme = catppuccin-mocha.conf

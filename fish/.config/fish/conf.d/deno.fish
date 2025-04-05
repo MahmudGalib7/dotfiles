@@ -1,0 +1,1 @@
+source "/home/galib/.deno/env.fish"
