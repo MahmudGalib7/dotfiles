@@ -8,6 +8,8 @@
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/galib/.zsh/completions:"* ]]; then export FPATH="/home/galib/.zsh/completions:$FPATH"; fi
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 autoload -Uz compinit
@@ -38,8 +40,6 @@ if [[ -n $SSH_CONNECTION ]]; then
  else
    export EDITOR='nvim'
  fi
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="$PATH:/home/galib/.cargo/bin"
 
@@ -79,13 +79,7 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 #Fzf
 source <(fzf --zsh)
 source ~/.zsh/fzf-git.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 KEYTIMEOUT=100
-
-source <(fzf --zsh)
-source ~/.zsh/fzf-git.sh
-KEYTIMEOUT=100
-
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
@@ -96,12 +90,14 @@ export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
   --style=full
   --preview 'fzf-preview.sh {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"# Composer
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
+# Composer
 export PATH="/home/galib/.config/composer/vendor/bin:$PATH"
 
 # Zinit plugin manager
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -117,6 +113,26 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::rust
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::brew
+zinit snippet OMZP::bun
+zinit snippet OMZP::deno
+zinit snippet OMZP::direnv
+zinit snippet OMZP::man
+zinit snippet OMZP::eza
+zinit snippet OMZP::gh
+zinit snippet OMZP::git-commit
+zinit snippet OMZP::git-extras
+zinit snippet OMZP::node
+zinit snippet OMZP::npm
+zinit snippet OMZP::nvm
+zinit snippet OMZP::pip
+zinit snippet OMZP::python
+zinit snippet OMZP::ssh
+zinit snippet OMZP::uv
+zinit snippet OMZP::vscode
+zinit snippet OMZP::zoxide
+zinit snippet OMZP::git-flow
 
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
@@ -167,6 +183,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias man="batman"
+
+export BATPIPE_ENABLE_COLOR=true
+export BATDIFF_USE_DELTA=true
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
@@ -181,7 +200,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 . "/home/galib/.deno/env"
 
-alias cat="bat"
+alias cat="bat --paging=never"
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -192,7 +211,6 @@ ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
-export XCURSOR_THEME="macOS"
 export CM_LAUNCHER="rofi"
 
 # Turso
@@ -207,16 +225,14 @@ alias open=xdg-open
 
 eval "$(atuin init zsh --disable-ctrl-r)"
 
-eval "$(direnv hook zsh)"
-
 alias ai-enable='source ~/.local/bin/ai-enable'
 alias aur-enable='source ~/.local/bin/aur-enable'
 alias pop-enable='source ~/.local/bin/pop-enable'
 
-alias ltree="eza --tree --level=2  --icons --git"
+alias ltree="eza --tree --level=2  --icons --git --git-ignore"
 eval "$(gh copilot alias -- zsh)"
 
-export GLAMOUR_STYLE="/home/galib/.config/glow/tokyonight.json"
+export GLAMOUR_STYLE="/home/galib/.config/glow/catppucin-mocha.json"
 
 # ripgrep->fzf->vim [QUERY]
 rfv() (
@@ -236,6 +252,8 @@ rfv() (
       --preview-window '~4,+{2}+4/3,<80(up)' \
       --query "$*"
 )
+
+alias autoremove='sudo pacman -Rcns $(pacman -Qdtq)'
 
 # yazi
 function y() {
