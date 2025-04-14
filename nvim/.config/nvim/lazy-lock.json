@@ -106,6 +106,7 @@
   "tiny-devicons-auto-colors.nvim": { "branch": "main", "commit": "51f548421f8a74680eff27d283c9d5ea6e8d0074" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "842983e91e0b8825f1084b8323c7806c8bf64c74" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
+  "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
   "translate.nvim": { "branch": "main", "commit": "e89e284b789535159f557e010c429d22943c36a5" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
