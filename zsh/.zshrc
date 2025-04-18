@@ -216,7 +216,7 @@ export CM_LAUNCHER="rofi"
 # Turso
 export PATH="$PATH:/home/galib/.turso"
 
-alias clock="tty-clock -tcBrsSC 6"
+alias clock="tty-clock -tcBrsSC 5"
 
 export PATH=$PATH:/home/galib/.spicetify
 
