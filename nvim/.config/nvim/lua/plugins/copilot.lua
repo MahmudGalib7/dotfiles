@@ -3,9 +3,7 @@ return {
 	lazy = false,
 	config = function()
 		require("copilot").setup({
-			panel = { enabled = false },
 			suggestion = {
-				enabled = false,
 				auto_trigger = true,
 				keymap = {
 					accept = "<Tab>",
@@ -15,7 +13,7 @@ return {
 				["*"] = true,
 			},
 			workspace_folders = {
-				"/run/media/galib/Developer/",
+				"/home/muntasir/projects",
 			},
 			copilot_model = "gpt-4o-copilot",
 			should_attach = function(_, bufname)
