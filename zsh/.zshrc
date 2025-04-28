@@ -58,6 +58,7 @@ esac
 # pnpm end
 
 export beef="cd ~/beef && beef"
+export LS_COLORS=$(vivid generate catppuccin-mocha)
 
 # Check if the session is X11 or Wayland
 session_type=$(w -h | awk '{print $2}')
@@ -105,6 +106,7 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
+
 zinit light ohmyzsh/ohmyzsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -113,6 +115,7 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::rust
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::git-flow
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::brew
 zinit snippet OMZP::bun
@@ -132,7 +135,6 @@ zinit snippet OMZP::ssh
 zinit snippet OMZP::uv
 zinit snippet OMZP::vscode
 zinit snippet OMZP::zoxide
-zinit snippet OMZP::git-flow
 
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
@@ -144,6 +146,7 @@ zinit light olets/zsh-abbr
 zinit light olets/zsh-autosuggestions-abbreviations-strategy
 
 # Respect fzf opts
+
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 export ABBR_GET_AVAILABLE_ABBREVIATION=1
@@ -183,7 +186,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias man="batman"
-
+eval "$(batpipe)"
 export BATPIPE_ENABLE_COLOR=true
 export BATDIFF_USE_DELTA=true
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
