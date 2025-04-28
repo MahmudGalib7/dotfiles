@@ -3,12 +3,9 @@
 </h3>
 
 <p align="center">
-  <a href="https://dotfyle.com/MahmudGalib7/dotfiles">
-    <img src="https://dotfyle.com/MahmudGalib7/dotfiles/badges/plugins?style=for-the-badge" />
-  <a href="https://dotfyle.com/MahmudGalib7/dotfiles">
-    <img src="https://dotfyle.com/MahmudGalib7/dotfiles/badges/leaderkey?style=for-the-badge" />
-  <a href="https://dotfyle.com/MahmudGalib7/dotfiles">
-    <img src="https://dotfyle.com/MahmudGalib7/dotfiles/badges/plugin-manager?style=for-the-badge" />
+  <a href="https://dotfyle.com/MahmudGalib7/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/MahmudGalib7/dotfiles-nvim-config-nvim/badges/plugins?style=for-the-badge" /></a>
+  <a href="https://dotfyle.com/MahmudGalib7/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/MahmudGalib7/dotfiles-nvim-config-nvim/badges/leaderkey?style=for-the-badge" /></a>
+  <a href="https://dotfyle.com/MahmudGalib7/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/MahmudGalib7/dotfiles-nvim-config-nvim/badges/plugin-manager?style=for-the-badge" /></a>
 </p>
 
 
