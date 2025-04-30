@@ -4,8 +4,8 @@
   signingKey = 15DD85B789460B4D5B1E7D37FCD45DF306DCC856
 
 [credential]
-  helper = /usr/local/bin/git-credential-manager
   credentialStore = gpg
+  helper = manager-core
 
 [init]
   defaultBranch = main
