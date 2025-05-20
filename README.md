@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com/?lines=👋+Welcome+To+My+Dotfiles!;&font=Poppins">
+  <img src="https://readme-typing-svg.herokuapp.com/?lines=👋+Welcome+To+My+Dotfiles!;&font=Poppins&center=true">
 </h1>
 
 <h4 align="center">
@@ -79,3 +79,4 @@ Contributions are welcome! Feel free to fork this repository and submit pull req
 ## License
 
 This dotfiles repository is released under the MIT License. See the [LICENSE](./LICENSE) file for more information.
+
