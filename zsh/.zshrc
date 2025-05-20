@@ -267,3 +267,8 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+export MANPAGER='nvim +Man!'
+
+# Transient prompt
+source ~/.zsh/transient-prompt.zsh
