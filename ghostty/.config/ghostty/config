@@ -1,7 +1,6 @@
 # Fonts
 font-family = "JetBrainsMono Nerd Font Mono"
-font-style-bold = "SemiBold"
-font-size = 12.5
+font-size = 12
 
 # Turn off confirmation window when closing
 confirm-close-surface = false
@@ -23,6 +22,9 @@ window-padding-y = 1
 
 # Shader
 # custom-shader = shaders/gradient-background.glsl
+
+# transparency
+background-opacity = 0.8
 
 # Theme
 theme = catppuccin-mocha.conf
