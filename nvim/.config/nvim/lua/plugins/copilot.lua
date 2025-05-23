@@ -13,7 +13,7 @@ return {
 				["*"] = true,
 			},
 			workspace_folders = {
-				"/run/media/galib/Developer/",
+				"/run/media/galib/Developer",
 			},
 			copilot_model = "gpt-4o-copilot",
 			should_attach = function(_, bufname)
