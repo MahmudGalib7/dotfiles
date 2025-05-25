@@ -6,7 +6,6 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				flavour = "mocha",
-				transparent_background = false,
 				term_colors = true,
 				compile = {
 					enabled = true,
@@ -14,24 +13,8 @@ return {
 				},
 				dim_inactive = {
 					enabled = true,
-					shade = "dark",
-					percentage = 0.15,
 				},
-				styles = {
-					comments = { "bold" },
-					conditionals = { "bold" },
-					loops = {},
-					functions = {},
-					keywords = {},
-					strings = {},
-					variables = {},
-					numbers = {},
-					booleans = {},
-					properties = {},
-					types = {},
-					operators = {},
-				},
-				color_overrides = {},
+				no_italic = true,
 				custom_highlights = function(palette)
 					local groups = {
 						SnacksDashboardHeader = { fg = palette.yellow },
@@ -75,17 +58,5 @@ return {
 			})
 			vim.cmd.colorscheme("catppuccin")
 		end,
-	},
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
 	},
 }
