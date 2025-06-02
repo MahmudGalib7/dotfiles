@@ -1,3 +1,5 @@
+abbr "gpp"="g++ -std=c++20 -O2 -Wall -Wextra -Wshadow -fsanitize=address,undefined -D_GLIBCXX_DEBUG"
+abbr "gppcp"="g++ -std=c++20 -O2"
 abbr -g "..."="../.."
 abbr -g "...."="../../.."
 abbr -g "....."="../../../.."

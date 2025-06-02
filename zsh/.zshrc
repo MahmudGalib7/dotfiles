@@ -273,3 +273,6 @@ export MANPAGER='nvim +Man!'
 # Transient prompt
 source ~/.zsh/transient-prompt.zsh
 
+export PATH="$HOME/.local/bin:$PATH"
+
+alias newcp='cp /run/media/galib/Developer/Codeforce/templates/cp_template.cpp ./main.cpp && nvim ./main.cpp'

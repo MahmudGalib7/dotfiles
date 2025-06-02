@@ -26,6 +26,7 @@ Plug 'pechorin/any-jump.vim'  " Jump to symbols, words
 Plug 'mhinz/vim-signify'  " Show changes in git
 Plug 'LunarWatcher/auto-pairs'  " Auto pairs for brackets, quotes
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'catppuccin/vim'
 
 " Initialize plugin system
 call plug#end()
@@ -38,7 +39,8 @@ set guifont=DejaVu\ Sans:s12
 set mouse=a
 set ignorecase
 set belloff=all
-set foldmethod=indent
+set nofoldenable
+set foldmethod=manual
 set relativenumber
 set smarttab
 set cindent
@@ -53,6 +55,7 @@ set updatetime=300 " Faster completion
 set shortmess+=c " Don't pass messages to |ins-completion-menu|
 set signcolumn=yes " Always show signcolumn
 set termguicolors " Enable true colors
+set nowrap " Disable line wrapping
 
 " colorscheme
 colorscheme catppuccin_mocha
@@ -168,3 +171,4 @@ augroup END
 
 " Source configuration
 command! ReloadConfig source ~/.vimrc
+

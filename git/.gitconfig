@@ -108,3 +108,5 @@
 
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[protocol "file"]
+	allow = always

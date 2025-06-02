@@ -51,13 +51,13 @@ function M:setup(opts)
 end
 
 function M:entry(job)
-	local args = job.args
+	local arg = job.arg
 
-	if args["inc_level"] ~= nil then
+	if arg["inc_level"] ~= nil then
 		inc_level()
-	elseif args["dec_level"] ~= nil then
+	elseif arg["dec_level"] ~= nil then
 		dec_level()
-	elseif args["toggle_follow_symlinks"] ~= nil then
+	elseif arg["toggle_follow_symlinks"] ~= nil then
 		toggle_follow_symlinks()
 	else
 		set_opts()
@@ -70,7 +70,7 @@ end
 function M:peek(job)
 	local opts = get_opts()
 
-	local args = {
+	local arg = {
 		"--all",
 		"--color=always",
 		"--icons=always",
@@ -80,21 +80,21 @@ function M:peek(job)
 	}
 
 	if is_tree_view_mode() then
-		table.insert(args, "--tree")
-		table.insert(args, string.format("--level=%d", opts.level))
+		table.insert(arg, "--tree")
+		table.insert(arg, string.format("--level=%d", opts.level))
 	end
 
 	if opts then
 		if opts.follow_symlinks then
-			table.insert(args, "--follow-symlinks")
+			table.insert(arg, "--follow-symlinks")
 		end
 
 		if opts.dereference then
-			table.insert(args, "--dereference")
+			table.insert(arg, "--dereference")
 		end
 	end
 
-	local child = Command("eza"):args(args):stdout(Command.PIPED):stderr(Command.PIPED):spawn()
+	local child = Command("eza"):arg(arg):stdout(Command.PIPED):stderr(Command.PIPED):spawn()
 
 	local limit = job.area.h
 	local lines = ""
