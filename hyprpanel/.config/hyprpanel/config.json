@@ -27,6 +27,7 @@
         "bluetooth",
         "systray",
         "clock",
+        "battery",
         "notifications"
       ]
     }
@@ -391,7 +392,7 @@
   "bar.clock.format": "%a %b %d  %I:%M %p",
   "menus.clock.time.hideSeconds": true,
   "menus.clock.weather.key": "7a80b273d6a140abb5034123242611",
-  "menus.clock.weather.location": "Chittagong",
+  "menus.clock.weather.location": "Dhaka",
   "hyprpanel.restartCommand": "hyprpanel -q; hyprpanel",
   "theme.bar.buttons.systray.enableBorder": false,
   "theme.bar.scaling": 100,
@@ -437,7 +438,7 @@
   },
   "menus.power.showLabel": true,
   "menus.power.lowBatteryNotification": false,
-  "bar.battery.label": false,
+  "bar.battery.label": true,
   "theme.bar.buttons.battery.enableBorder": false,
   "bar.battery.hideLabelWhenFull": false,
   "bar.windowtitle.class_name": true,
@@ -466,8 +467,13 @@
   "menus.media.displayTimeTooltip": true,
   "menus.dashboard.shortcuts.left.shortcut2.command": "spotify",
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Zen Browser",
-  "menus.dashboard.shortcuts.left.shortcut1.command": "zen-browser",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "flatpak run app.zen_browser.zen",
+  "menus.dashboard.stats.enabled": true,
+  "menus.dashboard.stats.interval": 2000,
+  "theme.bar.menus.enableShadow": false,
   "bar.customModules.storage.paths": [
     "/"
-  ]
+  ],
+  "bar.bluetooth.label": true,
+  "theme.bar.buttons.windowtitle.enableBorder": false
 }

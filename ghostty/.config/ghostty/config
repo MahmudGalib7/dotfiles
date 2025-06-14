@@ -1,6 +1,6 @@
 # Fonts
 font-family = "FantasqueSansM Nerd Font Mono Bold"
-font-size = 11.0
+font-size = 12.0
 
 # Turn off confirmation window when closing
 confirm-close-surface = false

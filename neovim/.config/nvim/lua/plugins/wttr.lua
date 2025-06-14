@@ -6,7 +6,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	opts = {
-		location = "Chittagong",
+		location = "Dhaka",
 		format = 1,
 	},
 	keys = {
