@@ -10,7 +10,7 @@ end
 
 if vim.g.neovide then
 	-- text
-	vim.o.guifont = "FiraCode Nerd Font:h12.5"
+	vim.o.guifont = "FantasqueSansM Nerd Font Mono"
 	vim.g.neovide_text_gamma = 0.8
 	vim.g.neovide_text_contrast = 0.9
 	vim.g.neovide_font_style = "Retina"
