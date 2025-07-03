@@ -232,6 +232,41 @@ return {
 
 		ls.add_snippets("markdown", snippets)
 
+		local cpp_snippets = {}
+
+		table.insert(
+			cpp_snippets,
+			s({
+				trig = "cp",
+				name = "Competitive Programming Template",
+				desc = "C++ Competitive Programming Template",
+				snippetType = "autosnippet",
+			}, {
+				t({
+					"#include <bits/stdc++.h>",
+					"using namespace std;",
+					"",
+					"#define ll long long",
+					"#define endl '\\n'",
+					"#define fastio() ios::sync_with_stdio(false); cin.tie(nullptr);",
+					"",
+					"int main() {",
+					"    fastio();",
+					"",
+					"    ",
+				}),
+				i(1),
+				t({
+					"",
+					"",
+					"    return 0;",
+					"}",
+				}),
+			})
+		)
+
+		ls.add_snippets("cpp", cpp_snippets)
+
 		return opts
 	end,
 }

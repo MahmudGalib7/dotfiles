@@ -1,94 +1,111 @@
-" Specify a directory for plugins
+" Plugins
 call plug#begin('~/.vim/plugged')
 
-" Core plugins
-Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Autocompletion & LSP
-Plug 'scrooloose/nerdtree'  " File explorer
-Plug 'Xuyuanp/nerdtree-git-plugin'  " Git status in NERDTree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Syntax highlighting for NERDTree
-Plug 'ryanoasis/vim-devicons'  " File icons
-Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
-Plug 'ctrlpvim/ctrlp.vim'  " Fuzzy file finder
-Plug 'scrooloose/nerdcommenter'  " Commenting support
-Plug 'christoomey/vim-tmux-navigator'  " Seamless navigation between Vim and Tmux
-Plug 'vim-airline/vim-airline'  " Status bar
-Plug 'vim-airline/vim-airline-themes'  " Airline themes
-Plug 'arcticicestudio/nord-vim'  " Nord theme
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Fuzzy finder
-Plug 'junegunn/fzf.vim'  " FZF integration
-Plug 'tpope/vim-surround'  " Surround text with brackets, quotes, etc.
-Plug 'tpope/vim-fugitive'  " Git integration
-Plug 'mbbill/undotree'  " Undo history visualization
-Plug 'sheerun/vim-polyglot'  " Language support
-Plug 'mhinz/vim-startify'  " Start screen
-Plug 'nathanaelkane/vim-indent-guides'  " Indentation guides
-Plug 'pechorin/any-jump.vim'  " Jump to symbols, words
-Plug 'mhinz/vim-signify'  " Show changes in git
-Plug 'LunarWatcher/auto-pairs'  " Auto pairs for brackets, quotes
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'catppuccin/vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}        " Autocompletion & LSP
+Plug 'scrooloose/nerdtree'                            " File explorer
+Plug 'Xuyuanp/nerdtree-git-plugin'                    " Git status in NERDTree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'       " Syntax highlighting for NERDTree
+Plug 'ryanoasis/vim-devicons'                         " File icons
+Plug 'airblade/vim-gitgutter'                         " Git diff in gutter
+Plug 'ctrlpvim/ctrlp.vim'                             " Fuzzy finder
+Plug 'scrooloose/nerdcommenter'                       " Commenting
+Plug 'christoomey/vim-tmux-navigator'                 " Vim-Tmux nav
+Plug 'vim-airline/vim-airline'                        " Status bar
+Plug 'vim-airline/vim-airline-themes'                 " Airline themes
+Plug 'arcticicestudio/nord-vim'                       " Nord theme
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " FZF
+Plug 'junegunn/fzf.vim'                               " FZF integration
+Plug 'tpope/vim-surround'                             " Surround text
+Plug 'tpope/vim-fugitive'                             " Git integration
+Plug 'mbbill/undotree'                                " Undo tree
+Plug 'sheerun/vim-polyglot'                           " Language support
+Plug 'mhinz/vim-startify'                             " Start screen
+Plug 'nathanaelkane/vim-indent-guides'                " Indent guides
+Plug 'pechorin/any-jump.vim'                          " Jump to symbols
+Plug 'mhinz/vim-signify'                              " Git signs
+Plug 'LunarWatcher/auto-pairs'                        " Auto pairs
+Plug 'ghifarit53/tokyonight-vim'                      " Theme
+Plug 'catppuccin/vim'                                 " Theme
+Plug 'SirVer/ultisnips'                               " Snippet engine
+Plug 'honza/vim-snippets'                             " Snippet collection
 
-" Initialize plugin system
 call plug#end()
 
 " Basic settings
 set bg=dark
-set hlsearch
+set termguicolors
+
+set number relativenumber
+set mouse=a
+set clipboard=unnamedplus
+set tabstop=2 shiftwidth=2 expandtab smarttab cindent
+set hidden
+set nowrap
+set signcolumn=yes
+set shortmess+=c
+set updatetime=300
+set noshowmode
+set splitbelow splitright
+set laststatus=2
+set belloff=all
 set backspace=indent,eol,start
 set guifont=DejaVu\ Sans:s12
-set mouse=a
-set ignorecase
-set belloff=all
-set nofoldenable
-set foldmethod=manual
-set relativenumber
-set smarttab
-set cindent
-set tabstop=2
-set shiftwidth=2
-set expandtab " Use spaces instead of tabs
-set laststatus=2
-set statusline+=%F
-set hidden " Allow hidden buffers
-set cmdheight=2 " Better display for messages
-set updatetime=300 " Faster completion
-set shortmess+=c " Don't pass messages to |ins-completion-menu|
-set signcolumn=yes " Always show signcolumn
-set termguicolors " Enable true colors
-set nowrap " Disable line wrapping
 
-" colorscheme
 colorscheme catppuccin_mocha
 
-" Key mappings
-let mapleader = " "
-let g:mapleader = " "
+" Enable highlight from LSP (semantic tokens)
+let g:coc_enable_locationlist = 0
+let g:coc_snippet_next = '<tab>'
+let g:coc_default_semantic_highlight_groups = 1
 
-" NERDTree mappings: Toggle NERDTree with space+e
+" Pmenu = popup menu, PmenuSel = selected item
+highlight Pmenu       guibg=#1e1e2e guifg=#cdd6f4
+highlight PmenuSel    guibg=#89b4fa guifg=#1e1e2e gui=bold
+highlight PmenuThumb  guibg=#45475a
+highlight PmenuSbar   guibg=#313244
+highlight NormalFloat guibg=#1e1e2e guifg=#cdd6f4
+highlight CocMenuSel  guibg=#89b4fa guifg=#1e1e2e gui=bold
+
+" Preview window for documentation
+set completeopt=menuone,noinsert,noselect
+set pumheight=12
+set previewheight=8
+
+" Slightly faster updatetime
+set updatetime=250
+
+" Transparent float border fix
+highlight FloatBorder guifg=#89b4fa guibg=#1e1e2e
+
+" Leader key
+let mapleader=" "
+let g:mapleader=" "
+
+" NERDTree toggle
 nmap <space>e :NERDTreeToggle<CR>
 
-" Close NERDTree if it's the last buffer
+" Close NERDTree if last buffer
 autocmd BufEnter * if winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree() | q | endif
 
-" Automatically close NERDTree when opening a file
+" Auto close NERDTree on file open
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | b# | endif
 
-" Commenting
+" Comment toggle
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-" Buffer navigation
+" Buffer list
 nnoremap gb :ls<CR>:b<Space>
 
-" Search and replace
+" Search & replace
 nnoremap ge yiw:%s/<C-r>0//g<Left><Left>
 
-" Window resizing
+" Window resize
 nnoremap <Leader>w+ :vertical resize +5<CR>
 nnoremap <Leader>w- :vertical resize -5<CR>
 nnoremap <Leader>t :tabs<CR>
 
-" Yank and paste to system clipboard
+" Clipboard yank/paste
 noremap <Leader>y "+y
 noremap <Leader>p "+p
 vmap <Leader>y "+y
@@ -101,10 +118,14 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 
-" Undotree
+" UndoTree toggle
 nnoremap <leader>u :UndotreeToggle<CR>
 
-" Coc.nvim settings
+" Format and save on Ctrl+S
+nnoremap <C-s> :call CocAction('format')<CR>:w<CR>
+inoremap <C-s> <Esc>:call CocAction('format')<CR>:w<CR>a
+
+" Coc.nvim extensions
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
@@ -117,29 +138,35 @@ let g:coc_global_extensions = [
   \ 'coc-java',
   \ ]
 
-" Use Tab for completion
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+" TAB to confirm completion or expand snippets
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ pumvisible() ? "\<C-y>" :
+      \ UltiSnips#CanExpandSnippet() ? "<C-R>=UltiSnips#ExpandSnippet()<CR>" :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump'])\<CR>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+inoremap <expr> <S-Tab>
+      \ pumvisible() ? "\<C-p>" :
+      \ coc#jumpable(-1) ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-jump-backward'])\<CR>" :
+      \ "\<C-h>"
 
-" Use Shift-Tab to navigate backward in completion menu
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
 
-" Use <cr> to confirm completion
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Confirm completion with <CR>
+inoremap <expr> <cr> pumvisible() ? coc#pum#confirm() : "\<CR>"
 
-" Navigate diagnostics
+" Diagnostics navigation
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Go-to definitions
+" Go to definitions etc.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -148,14 +175,14 @@ nmap <silent> gr <Plug>(coc-references)
 " Show documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
+  if index(['vim','help'], &filetype) >= 0
     execute 'h '.expand('<cword>')
   else
     call CocAction('doHover')
   endif
 endfunction
 
-" Formatting
+" Formatting selected code
 nmap <leader>f  <Plug>(coc-format-selected)
 xmap <leader>f  <Plug>(coc-format-selected)
 
@@ -169,6 +196,6 @@ augroup highlight_yank
   autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})
 augroup END
 
-" Source configuration
+" Reload config command
 command! ReloadConfig source ~/.vimrc
 
