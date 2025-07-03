@@ -35,7 +35,7 @@ done
 
 #Restart waybar
 sleep 1
-# waybar &
+waybar &
 
 # relaunch swaync
 sleep 0.5

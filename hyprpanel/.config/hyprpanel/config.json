@@ -260,7 +260,7 @@
   "theme.bar.buttons.workspaces.available": "#89dceb",
   "theme.bar.buttons.workspaces.hover": "#f5c2e7",
   "theme.bar.buttons.workspaces.background": "#242438",
-  "theme.bar.buttons.dashboard.icon": "#1c71d8",
+  "theme.bar.buttons.dashboard.icon": "#3584e4",
   "theme.bar.buttons.dashboard.background": "#242438",
   "theme.osd.label": "#b4beff",
   "theme.osd.icon": "#11111b",
@@ -512,7 +512,7 @@
   "theme.bar.buttons.volume.input_text": "#eba0ac",
   "theme.bar.buttons.volume.separator": "#45475a",
   "theme.bar.buttons.modules.cpuTemp.icon_background": "#fab387",
-  "theme.bar.buttons.modules.cpuTemp.icon": "#181824",
+  "theme.bar.buttons.modules.cpuTemp.icon": "#fab387",
   "theme.bar.buttons.modules.cpuTemp.text": "#fab387",
   "theme.bar.buttons.modules.cpuTemp.border": "#fab387",
   "theme.osd.border.color": "#8ff0a4"
